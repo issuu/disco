@@ -25,6 +25,7 @@ get_env(Var) ->
 get_env(Var, Fmt) ->
         case os:getenv(Var) of
                 false -> "";
+                "" -> "";
                 Val -> io_lib:format(Fmt, [Val])
         end.
 
